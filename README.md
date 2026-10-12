@@ -142,6 +142,15 @@ secrets.
 
 ---
 
+## Security
+
+The CLOCK IN platform's automated scan of commit `f634241` is answered finding by finding in
+[SECURITY.md](SECURITY.md): no confirmed vulnerabilities. Its one High (the VRF callback `fulfill_draw`) is a false
+positive, because the `#[vrf_callback]` macro adds MagicBlock's VRF identity as a required signer. The file also shows how the
+money path is guarded and what is live versus devnet-only.
+
+---
+
 ## What is real, and what is coming
 
 | Live on mainnet-dev today | Built, switched off | Not built yet |
