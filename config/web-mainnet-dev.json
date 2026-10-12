@@ -1,7 +1,7 @@
 {
   "apiUrl": "https://gachapon-api-mainnet-dev.gachapon-dev.workers.dev",
   "privyAppId": "cmtvc9otj02hd0bl8frhel0zh",
-  "treasuryUsdcTokenAccount": "5J5wfNFJREQ43C9LBeb6qHJm3uN1aKWhb9351BhRgEpt",
-  "usdcMint": "5NPTRsDiMDtGGBgU2xrCMR5nHoKKMkmT5oM19MPUt547",
+  "treasuryUsdcTokenAccount": "4Zso7WWZPUS3mxV1bVBvTLBv1HBZezFkRikEB5pLVfzu",
+  "usdcMint": "6yCC9D83GvZg8s2rT5ftXPiSCWgf7qmKfD1HZqXM29HT",
   "indexable": false
 }

@@ -21,7 +21,7 @@ Entered in **CLOCK IN**, the Solana Mobile hackathon (with RadiantsDAO).
 ## Try it (about 5 minutes, on any Android phone)
 
 The APK talks to **mainnet-dev**, our staging stack: Solana mainnet, real Privy sign-in, real transactions and real draws,
-but **payments use a test USDC mint with no cash value** (`5NPTRsDiMDtGGBgU2xrCMR5nHoKKMkmT5oM19MPUt547`), not Circle's
+but **payments use a test USDC mint with no cash value** (`6yCC9D83GvZg8s2rT5ftXPiSCWgf7qmKfD1HZqXM29HT`), not Circle's
 USDC. For judging, this stack is open in every country.
 
 1. **Install** the APK from [Releases](https://github.com/gotcha-gacha/gotchapon-clockin/releases/latest) on a Seeker or any

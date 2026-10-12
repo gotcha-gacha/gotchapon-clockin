@@ -27,8 +27,8 @@
       "env": {
         "EXPO_PUBLIC_USE_MOCK": "0",
         "EXPO_PUBLIC_API_URL": "https://gachapon-api-mainnet-dev.gachapon-dev.workers.dev",
-        "EXPO_PUBLIC_TREASURY_USDC_TOKEN_ACCOUNT": "5J5wfNFJREQ43C9LBeb6qHJm3uN1aKWhb9351BhRgEpt",
-        "EXPO_PUBLIC_USDC_MINT": "5NPTRsDiMDtGGBgU2xrCMR5nHoKKMkmT5oM19MPUt547",
+        "EXPO_PUBLIC_TREASURY_USDC_TOKEN_ACCOUNT": "4Zso7WWZPUS3mxV1bVBvTLBv1HBZezFkRikEB5pLVfzu",
+        "EXPO_PUBLIC_USDC_MINT": "6yCC9D83GvZg8s2rT5ftXPiSCWgf7qmKfD1HZqXM29HT",
         "EXPO_PUBLIC_PRIVY_APP_ID": "cmtvc9otj02hd0bl8frhel0zh"
       }
     },
@@ -43,8 +43,8 @@
       "env": {
         "EXPO_PUBLIC_USE_MOCK": "0",
         "EXPO_PUBLIC_API_URL": "https://gachapon-api-mainnet-dev.gachapon-dev.workers.dev",
-        "EXPO_PUBLIC_TREASURY_USDC_TOKEN_ACCOUNT": "5J5wfNFJREQ43C9LBeb6qHJm3uN1aKWhb9351BhRgEpt",
-        "EXPO_PUBLIC_USDC_MINT": "5NPTRsDiMDtGGBgU2xrCMR5nHoKKMkmT5oM19MPUt547",
+        "EXPO_PUBLIC_TREASURY_USDC_TOKEN_ACCOUNT": "4Zso7WWZPUS3mxV1bVBvTLBv1HBZezFkRikEB5pLVfzu",
+        "EXPO_PUBLIC_USDC_MINT": "6yCC9D83GvZg8s2rT5ftXPiSCWgf7qmKfD1HZqXM29HT",
         "EXPO_PUBLIC_PRIVY_APP_ID": "cmtvc9otj02hd0bl8frhel0zh"
       }
     }

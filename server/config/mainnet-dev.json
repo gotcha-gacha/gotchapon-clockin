@@ -7,8 +7,8 @@
   "testToken": {
     "seed": "gachapon-test-usdc-v1",
     "decimals": 6,
-    "initialSupply": "1000",
-    "treasuryOwner": "9d4LUccwNb1JehNAW4rgy4CzBpxNv32KZ2YZcMTywEV6",
+    "initialSupply": "25000",
+    "treasuryOwner": "6FPMDNZn3Shj3T1dM37fsf1rQNdhGT3x5Ppaqsh7MFnm",
     "faucetTargetBalance": "20000"
   }
 }
