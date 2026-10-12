@@ -1,0 +1,19 @@
+services:
+  surfpool:
+    image: surfpool/surfpool:1.5.0
+    environment:
+      NO_DNA: "1"
+    command:
+      - start
+      - --ci
+      - --network
+      - mainnet
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8899"
+      - --ws-port
+      - "8900"
+    ports:
+      - "18899:8899"
+      - "18900:8900"

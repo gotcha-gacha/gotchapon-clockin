@@ -1,0 +1,618 @@
+{
+  "address": "GJZe44ZXk27WxVqXgEbX9tXNpxrPBAA9Z1a7Gd8Rp5ut",
+  "metadata": {
+    "name": "draw",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "close_draw",
+      "docs": [
+        "The requester takes the rent back once the pull has settled (or certainly never will be fulfilled).",
+        "The used bit stays set, and the randomness stays in the oracle's fulfilment transaction."
+      ],
+      "discriminator": [
+        128,
+        127,
+        153,
+        89,
+        19,
+        81,
+        63,
+        30
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "draw",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  114,
+                  97,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "draw.sequence",
+                "account": "Draw"
+              }
+            ]
+          }
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "fulfill_draw",
+      "docs": [
+        "Only MagicBlock's VRF program can call this (`#[vrf_callback]`). It never fails on valid input: a",
+        "failing callback reverts the fulfilment, and an unfulfilled request's fee goes to the oracle."
+      ],
+      "discriminator": [
+        136,
+        46,
+        22,
+        51,
+        33,
+        153,
+        232,
+        234
+      ],
+      "accounts": [
+        {
+          "name": "vrf_program_identity",
+          "docs": [
+            "Scoped VRF identity PDA, bound to this program. Its presence as a signer proves",
+            "the callback was issued by the VRF program for this program."
+          ],
+          "signer": true
+        },
+        {
+          "name": "draw",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "randomness",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "init_page",
+      "docs": [
+        "The requester opens the next used page before the sequences it covers are drawn."
+      ],
+      "discriminator": [
+        153,
+        126,
+        170,
+        81,
+        47,
+        213,
+        67,
+        13
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "used",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  117,
+                  115,
+                  101,
+                  100
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "page"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "page",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "initialize",
+      "docs": [
+        "Once, by the program's upgrade authority: names the key that may request draws."
+      ],
+      "discriminator": [
+        175,
+        175,
+        109,
+        31,
+        13,
+        152,
+        155,
+        237
+      ],
+      "accounts": [
+        {
+          "name": "upgrade_authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "program",
+          "address": "GJZe44ZXk27WxVqXgEbX9tXNpxrPBAA9Z1a7Gd8Rp5ut"
+        },
+        {
+          "name": "program_data"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "authority",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "request_draw",
+      "docs": [
+        "One MagicBlock request (0.0005 SOL tier) for pull `sequence`. Refused if that sequence was ever requested."
+      ],
+      "discriminator": [
+        22,
+        180,
+        8,
+        81,
+        47,
+        21,
+        86,
+        159
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "config",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "used",
+          "writable": true
+        },
+        {
+          "name": "draw",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  100,
+                  114,
+                  97,
+                  119
+                ]
+              },
+              {
+                "kind": "arg",
+                "path": "sequence"
+              }
+            ]
+          }
+        },
+        {
+          "name": "oracle_queue",
+          "writable": true,
+          "address": "Cuj97ggrhhidhbu39TijNVqE74xvKJ69gDervRUXAxGh"
+        },
+        {
+          "name": "program_identity",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  105,
+                  100,
+                  101,
+                  110,
+                  116,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vrf_program",
+          "address": "Vrf1RNUjXmQGjmQrQLvJHs9SNkvDJEsRVFPkfSQUwGz"
+        },
+        {
+          "name": "slot_hashes",
+          "address": "SysvarS1otHashes111111111111111111111111111"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "sequence",
+          "type": "u64"
+        },
+        {
+          "name": "pull_id",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        },
+        {
+          "name": "count",
+          "type": "u8"
+        },
+        {
+          "name": "pool_hash",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_authority",
+      "docs": [
+        "The upgrade authority may rotate the requester key."
+      ],
+      "discriminator": [
+        133,
+        250,
+        37,
+        21,
+        110,
+        163,
+        26,
+        121
+      ],
+      "accounts": [
+        {
+          "name": "upgrade_authority",
+          "signer": true
+        },
+        {
+          "name": "config",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  102,
+                  105,
+                  103
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "program",
+          "address": "GJZe44ZXk27WxVqXgEbX9tXNpxrPBAA9Z1a7Gd8Rp5ut"
+        },
+        {
+          "name": "program_data"
+        }
+      ],
+      "args": [
+        {
+          "name": "authority",
+          "type": "pubkey"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Config",
+      "discriminator": [
+        155,
+        12,
+        170,
+        224,
+        30,
+        250,
+        204,
+        130
+      ]
+    },
+    {
+      "name": "Draw",
+      "discriminator": [
+        225,
+        131,
+        41,
+        222,
+        122,
+        20,
+        146,
+        202
+      ]
+    },
+    {
+      "name": "UsedPage",
+      "discriminator": [
+        44,
+        228,
+        195,
+        52,
+        7,
+        247,
+        118,
+        7
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "BadCount",
+      "msg": "count must be 1..=10"
+    },
+    {
+      "code": 6001,
+      "name": "AlreadyRequested",
+      "msg": "that pull sequence was already requested"
+    },
+    {
+      "code": 6002,
+      "name": "WrongPage",
+      "msg": "used page does not cover this sequence"
+    },
+    {
+      "code": 6003,
+      "name": "NotAuthority",
+      "msg": "signer is not the draw authority"
+    },
+    {
+      "code": 6004,
+      "name": "NotUpgradeAuthority",
+      "msg": "signer is not the program's upgrade authority"
+    },
+    {
+      "code": 6005,
+      "name": "StillPending",
+      "msg": "draw is still pending"
+    }
+  ],
+  "types": [
+    {
+      "name": "Config",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Draw",
+      "docs": [
+        "Byte layout (after the 8-byte discriminator) is read by the Worker without an IDL:",
+        "sequence u64 @8 | pull_id @16 | pool_hash @48 | randomness @80 | request_slot u64 @112 | fulfilled_slot u64 @120 | count @128 | bump @129"
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "sequence",
+            "type": "u64"
+          },
+          {
+            "name": "pull_id",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "pool_hash",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "randomness",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "request_slot",
+            "type": "u64"
+          },
+          {
+            "name": "fulfilled_slot",
+            "type": "u64"
+          },
+          {
+            "name": "count",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UsedPage",
+      "serialization": "bytemuck",
+      "repr": {
+        "kind": "c"
+      },
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "page",
+            "type": "u32"
+          },
+          {
+            "name": "_pad",
+            "type": {
+              "array": [
+                "u8",
+                4
+              ]
+            }
+          },
+          {
+            "name": "bits",
+            "type": {
+              "array": [
+                "u8",
+                10224
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "name": "gachapon",
+  "main": "entrypoint.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "@ethersproject/shims": "^5.8.0",
+    "@expo-google-fonts/nunito": "^0.4.2",
+    "@expo/metro-runtime": "~57.0.16",
+    "@privy-io/expo": "^0.74.3",
+    "@privy-io/expo-native-extensions": "^0.0.12",
+    "@privy-io/react-auth": "3.45.0",
+    "@shopify/react-native-skia": "2.6.2",
+    "@solana-mobile/mobile-wallet-adapter-protocol": "2.3.0",
+    "@solana-program/memo": "^0.13.1",
+    "@solana-program/system": "^0.14.1",
+    "@solana-program/token": "^0.16.1",
+    "@solana/codecs-strings": "8.3.0",
+    "@solana/kit": "^8.3.0",
+    "@solana/web3.js": "1.98.4",
+    "buffer": "^6.0.3",
+    "expo": "~57.0.25",
+    "expo-apple-authentication": "~57.0.2",
+    "expo-application": "~57.0.3",
+    "expo-asset": "~57.0.18",
+    "expo-audio": "~57.0.5",
+    "expo-clipboard": "~57.0.2",
+    "expo-constants": "~57.0.19",
+    "expo-crypto": "~57.0.3",
+    "expo-dev-client": "~57.0.19",
+    "expo-file-system": "~57.0.7",
+    "expo-font": "~57.0.4",
+    "expo-haptics": "~57.0.3",
+    "expo-linear-gradient": "~57.0.2",
+    "expo-linking": "~57.0.11",
+    "expo-router": "~57.0.23",
+    "expo-secure-store": "~57.0.4",
+    "expo-sensors": "~57.0.3",
+    "expo-sharing": "~57.0.22",
+    "expo-splash-screen": "~57.0.9",
+    "expo-status-bar": "~57.0.1",
+    "expo-system-ui": "~57.0.4",
+    "expo-web-browser": "~57.0.3",
+    "fast-text-encoding": "^1.0.6",
+    "posthog-js": "^1.434.3",
+    "posthog-react-native": "^4.75.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-gesture-handler": "~2.32.0",
+    "react-native-get-random-values": "~1.11.0",
+    "react-native-pager-view": "8.0.2",
+    "react-native-qrcode-svg": "^6.3.24",
+    "react-native-reanimated": "4.5.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-svg": "15.15.4",
+    "react-native-view-shot": "5.1.0",
+    "react-native-web": "^0.21.2",
+    "react-native-webview": "13.16.1",
+    "react-native-worklets": "0.10.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-dynamic-import": "^7.29.7",
+    "@testing-library/react-native": "^14.0.1",
+    "@types/jest": "29.5.14",
+    "@types/react": "~19.2.2",
+    "@types/react-dom": "~19.2.3",
+    "eslint": "^9.39.0",
+    "eslint-config-expo": "~57.0.2",
+    "expo-doctor": "^1.20.4",
+    "jest": "~29.7.0",
+    "jest-expo": "~57.0.5",
+    "test-renderer": "^1.2.0",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "ios": "expo run:ios",
+    "android": "expo run:android",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "doctor:expo": "expo-doctor",
+    "skia:web": "setup-skia-web public",
+    "web": "pnpm skia:web && expo start --web",
+    "export:web": "pnpm skia:web && EXPO_NO_DOTENV=1 expo export --platform web --clear",
+    "deploy:web:mainnet-dev": "node scripts/deploy-web.mjs config/web-mainnet-dev.json",
+    "verify:web": "node --test scripts/__tests__/bundle-budget.test.mjs scripts/__tests__/gone.test.mjs scripts/__tests__/metro-transformer.test.mjs scripts/__tests__/sky-shader.test.mjs scripts/__tests__/deploy-web.test.mjs && pnpm skia:web && mkdir -p .expo/verify-cache && TMPDIR=$PWD/.expo/verify-cache EXPO_NO_DOTENV=1 EXPO_PUBLIC_USE_MOCK=0 EXPO_PUBLIC_API_URL= EXPO_PUBLIC_PRIVY_APP_ID= EXPO_PUBLIC_PRIVY_CLIENT_ID= EXPO_PUBLIC_PRIVY_CLIENT_ID_WEB= expo export --platform web --output-dir .expo/verify-web && node scripts/bundle-budget.mjs .expo/verify-web --no-mock",
+    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm verify:web",
+    "test": "pnpm test:native && pnpm test:web",
+    "test:native": "jest --selectProjects native",
+    "test:web": "jest --selectProjects web",
+    "server:dev": "pnpm --dir server dev",
+    "server:dev:privy": "pnpm --dir server dev:privy",
+    "server:db:reset": "pnpm --dir server db:reset",
+    "server:db:seed": "pnpm --dir server db:seed",
+    "server:test": "pnpm --dir server test",
+    "server:test:e2e": "pnpm --dir server test:e2e:surfpool",
+    "server:typecheck": "pnpm --dir server typecheck",
+    "server:verify": "pnpm --dir server verify"
+  },
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "workerd",
+      "unrs-resolver",
+      "@shopify/react-native-skia"
+    ],
+    "patchedDependencies": {
+      "expo-router@57.0.23": "patches/expo-router@57.0.23.patch"
+    }
+  },
+  "jest": {
+    "testTimeout": 15000,
+    "projects": [
+      {
+        "displayName": "native",
+        "preset": "jest-expo",
+        "testMatch": [
+          "**/*.test.ts",
+          "**/*.test.tsx",
+          "**/*.spec.ts",
+          "**/*.spec.tsx"
+        ],
+        "testPathIgnorePatterns": [
+          "/node_modules/",
+          "<rootDir>/\\.claude/worktrees/",
+          "<rootDir>/server/",
+          "/ios/",
+          "/android/",
+          "\\.web\\.(test|spec)\\.[tj]sx?$",
+          "\\.(test|spec)\\.web\\.[tj]sx?$"
+        ],
+        "setupFiles": [
+          "<rootDir>/jest.setup.ts"
+        ],
+        "resolver": "react-native-worklets/jest/resolver.js",
+        "transformIgnorePatterns": [
+          "/node_modules/(?!(.pnpm|react-native|@react-native|@react-native-community|expo|@expo|@expo-google-fonts|@solana|jayson|uuid|react-navigation|@react-navigation|@sentry/react-native|native-base|standard-navigation|@shopify/react-native-skia))",
+          "/node_modules/react-native-reanimated/plugin/",
+          "/node_modules/@react-native/babel-preset/"
+        ],
+        "setupFilesAfterEnv": [
+          "<rootDir>/jest.afterEnv.ts"
+        ],
+        "moduleNameMapper": {
+          "^rpc-websockets$": "<rootDir>/node_modules/rpc-websockets/dist/index.browser.cjs"
+        },
+        "transform": {
+          "\\.mjs$": [
+            "babel-jest",
+            {
+              "presets": [
+                "babel-preset-expo"
+              ],
+              "caller": {
+                "name": "metro",
+                "bundler": "metro",
+                "platform": "ios"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "displayName": "web",
+        "preset": "jest-expo/web",
+        "testMatch": [
+          "**/*.web.test.ts",
+          "**/*.web.test.tsx",
+          "**/*.test.web.ts",
+          "**/*.test.web.tsx",
+          "**/*.web.spec.ts",
+          "**/*.web.spec.tsx",
+          "**/*.spec.web.ts",
+          "**/*.spec.web.tsx"
+        ],
+        "testPathIgnorePatterns": [
+          "/node_modules/",
+          "<rootDir>/\\.claude/worktrees/",
+          "<rootDir>/server/",
+          "/ios/",
+          "/android/"
+        ],
+        "resolver": "react-native-worklets/jest/resolver.js",
+        "transformIgnorePatterns": [
+          "/node_modules/(?!(.pnpm|react-native|@react-native|@react-native-community|expo|@expo|@expo-google-fonts|react-navigation|@react-navigation|@sentry/react-native|native-base|standard-navigation|@shopify/react-native-skia))",
+          "/node_modules/react-native-reanimated/plugin/",
+          "/node_modules/@react-native/babel-preset/"
+        ],
+        "transform": {
+          "\\.[jt]sx?$": [
+            "babel-jest",
+            {
+              "presets": [
+                "babel-preset-expo"
+              ],
+              "caller": {
+                "name": "metro",
+                "bundler": "metro",
+                "platform": "web"
+              },
+              "plugins": [
+                "@babel/plugin-transform-dynamic-import"
+              ]
+            }
+          ]
+        },
+        "setupFiles": [
+          "<rootDir>/jest.setup.web.ts"
+        ]
+      }
+    ]
+  }
+}

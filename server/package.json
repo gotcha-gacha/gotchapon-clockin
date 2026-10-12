@@ -1,0 +1,46 @@
+{
+  "name": "@gachapon/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --env local",
+    "dev:privy": "wrangler dev --env local --var AUTH_MODE:privy",
+    "deploy": "wrangler deploy --env production",
+    "deploy:mainnet-dev": "wrangler deploy --env mainnet-dev",
+    "cf-typegen": "wrangler types",
+    "admin:key:generate": "node scripts/generate-admin-api-key.mjs",
+    "db:reset": "node scripts/reset-db.mjs",
+    "db:setup:mainnet-dev": "wrangler d1 execute gachapon-mainnet-dev --env mainnet-dev --remote --file=schema.sql",
+    "db:seed:mainnet-dev": "node scripts/seed-remote.mjs mainnet-dev",
+    "db:setup:remote": "wrangler d1 execute gachapon-production --env production --remote --file=schema.sql",
+    "db:seed": "node scripts/build-seed.mjs && wrangler d1 execute gachapon --env local --local --file=.generated/dev-seed.sql",
+    "setup:test-token": "node scripts/setup-test-token.ts --config config/mainnet-dev.json",
+    "fund:fee-payer": "node scripts/fund-fee-payer.ts --config config/mainnet-dev.json",
+    "fund:faucet": "node scripts/fund-faucet.ts --config config/mainnet-dev.json",
+    "test": "vitest run",
+    "test:scripts": "node --test scripts/__tests__/*.test.ts",
+    "test:e2e:surfpool": "node scripts/run-surfpool-e2e.ts",
+    "test:e2e:payments": "node scripts/run-surfpool-e2e.ts --config e2e/vitest.config.ts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p e2e/tsconfig.json",
+    "verify": "pnpm typecheck && pnpm test:scripts && vitest run"
+  },
+  "dependencies": {
+    "@blueshift-gg/solana-ecvrf": "0.0.1",
+    "@noble/hashes": "^1.8.0",
+    "@privy-io/node": "0.35.0",
+    "@solana/kit": "^8.3.0",
+    "@solana-program/memo": "^0.13.1",
+    "@solana-program/system": "^0.14.1",
+    "@solana-program/token": "^0.16.1",
+    "@solana/kit-plugin-rpc": "^0.19.0",
+    "@solana/kit-plugin-signer": "^0.19.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.1.10",
+    "@cloudflare/workers-types": "^5.20260916.1",
+    "typescript": "~6.0.3",
+    "vitest": "^4.1.0",
+    "wrangler": "^4.132.0"
+  }
+}

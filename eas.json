@@ -1,0 +1,64 @@
+{
+  "cli": {
+    "version": ">= 24.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_USE_MOCK": "1"
+      }
+    },
+    "development-device": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_USE_MOCK": "1"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "environment": "production",
+      "env": {
+        "EXPO_PUBLIC_USE_MOCK": "0",
+        "EXPO_PUBLIC_API_URL": "https://gachapon-api-mainnet-dev.gachapon-dev.workers.dev",
+        "EXPO_PUBLIC_TREASURY_USDC_TOKEN_ACCOUNT": "5J5wfNFJREQ43C9LBeb6qHJm3uN1aKWhb9351BhRgEpt",
+        "EXPO_PUBLIC_USDC_MINT": "5NPTRsDiMDtGGBgU2xrCMR5nHoKKMkmT5oM19MPUt547",
+        "EXPO_PUBLIC_PRIVY_APP_ID": "cmtvc9otj02hd0bl8frhel0zh"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_USE_MOCK": "0"
+      }
+    },
+    "testflight": {
+      "extends": "production",
+      "env": {
+        "EXPO_PUBLIC_USE_MOCK": "0",
+        "EXPO_PUBLIC_API_URL": "https://gachapon-api-mainnet-dev.gachapon-dev.workers.dev",
+        "EXPO_PUBLIC_TREASURY_USDC_TOKEN_ACCOUNT": "5J5wfNFJREQ43C9LBeb6qHJm3uN1aKWhb9351BhRgEpt",
+        "EXPO_PUBLIC_USDC_MINT": "5NPTRsDiMDtGGBgU2xrCMR5nHoKKMkmT5oM19MPUt547",
+        "EXPO_PUBLIC_PRIVY_APP_ID": "cmtvc9otj02hd0bl8frhel0zh"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "ios": {
+        "ascAppId": "6811603866"
+      }
+    },
+    "testflight": {
+      "ios": {
+        "ascAppId": "6811603866"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+[package]
+name = "draw"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "draw"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+
+[dependencies]
+anchor-lang = { version = "=0.32.1" }
+ephemeral-rollups-sdk = { version = "=0.17.3", features = ["anchor-compat", "vrf"] }
+solana-sha256-hasher = "=2.3.0"
+bytemuck = { version = "=1.25.2", features = ["derive", "min_const_generics"] }
+
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

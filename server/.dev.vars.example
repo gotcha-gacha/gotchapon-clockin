@@ -1,0 +1,13 @@
+# Copy to .dev.vars only when overriding local defaults. Never commit .dev.vars.
+# AUTH_MODE=privy
+# PRIVY_APP_ID=your-privy-app-id
+# PRIVY_APP_SECRET=use-wrangler-secret-put-in-production
+# Optional local/test override; production uses Privy's rotating JWKS endpoint.
+# PRIVY_VERIFICATION_KEY="-----BEGIN PUBLIC KEY-----\\n...\\n-----END PUBLIC KEY-----"
+# PAYMENTS_MODE=solana-rpc
+# ALLOWED_ORIGINS=http://localhost:8081
+# SOLANA_RPC_URL=https://your-private-rpc.example
+# ENABLED_ASSETS=USDC
+# ECVRF_SECRET_SEED=32-byte-hex-or-base64url-seed
+# ADMIN_API_KEY=at-least-32-random-bytes-for-admin-scripts
+# FEE_PAYER_KEYPAIR=[0,1,...]

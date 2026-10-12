@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <radialGradient id="gotchapon-3a" cx="0.5" cy="0.35" r="0.8">
+      <stop offset="0" stop-color="#2A3A66"/>
+      <stop offset="1" stop-color="#141D35"/>
+    </radialGradient>
+    <clipPath id="gotchapon-3a-top"><rect width="120" height="60"/></clipPath>
+    <clipPath id="gotchapon-3a-bottom"><rect y="60" width="120" height="60"/></clipPath>
+  </defs>
+  <rect width="120" height="120" rx="27" fill="url(#gotchapon-3a)"/>
+  <path d="M78.6 37.8 A29 29 0 1 0 89 60" stroke="#0B1024" stroke-width="21" stroke-linecap="round"/>
+  <path d="M78.6 37.8 A29 29 0 1 0 89 60" stroke="#FF5A47" stroke-width="15" stroke-linecap="round" clip-path="url(#gotchapon-3a-top)"/>
+  <path d="M78.6 37.8 A29 29 0 1 0 89 60" stroke="#F1F3F9" stroke-width="15" stroke-linecap="round" clip-path="url(#gotchapon-3a-bottom)"/>
+  <path d="M44 36 A24 24 0 0 1 56 31.5" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity="0.45"/>
+  <line x1="22" y1="60" x2="40" y2="60" stroke="#0B1024" stroke-width="5"/>
+  <line x1="89" y1="60" x2="62" y2="60" stroke="#0B1024" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="89" cy="60" r="6.5" fill="#FFD23F" stroke="#0B1024" stroke-width="3"/>
+  <circle cx="60" cy="60" r="10.5" fill="#F1F3F9" stroke="#0B1024" stroke-width="4.5"/>
+  <circle cx="60" cy="60" r="4" fill="#fff" stroke="#0B1024" stroke-width="2"/>
+</svg>

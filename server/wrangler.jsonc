@@ -1,0 +1,105 @@
+// Every deploy names its environment (#274). There are deliberately no top-level `vars` and no top-level D1 binding: a bare
+// `wrangler deploy` used to publish the local profile (dev auth trusting `x-dev-user`, mock payments, the published ECVRF
+// seed) under the real worker name. Now it publishes a worker with no ENVIRONMENT, which refuses every request
+// (src/index.ts), and no database. Local development and the tests use `--env local` (package.json, vitest.config.ts).
+// scripts/__tests__/wrangler-config.test.ts holds this file to that shape.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gachapon-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-16",
+  "observability": {
+    "enabled": true
+  },
+  "env": {
+    "local": {
+      "name": "gachapon-api-local",
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "gachapon",
+          "database_id": "local-development"
+        }
+      ],
+      "triggers": { "crons": ["*/5 * * * *"] },
+      "vars": {
+        "ENVIRONMENT": "local",
+        "AUTH_MODE": "dev",
+        "PAYMENTS_MODE": "mock",
+        "ALLOWED_ORIGINS": "http://localhost:3000,http://localhost:8081,http://localhost:19006",
+        "ENABLED_ASSETS": "USDC,USDT",
+        "ECVRF_SECRET_SEED": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+        "LOCAL_USER_ID": "demo-user",
+        "TREASURY_USDC_TOKEN_ACCOUNT": "TreasuryUsdc11111111111111111111111111111",
+        "TREASURY_USDT_TOKEN_ACCOUNT": "TreasuryUsdt11111111111111111111111111111",
+        "USDC_MINT": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "USDT_MINT": "Es9vMFrzaCERmJfrF4H2FYDjdhyb5tZic7EZ8ns1vR8",
+        "SOLANA_RPC_URL": "https://api.mainnet-beta.solana.com",
+        "JUPITER_GIFT_ENABLED": "false",
+        "TCGAPI_BASE_URL": "https://tcgapi.jup.ag",
+        "JUPITER_GIFT_PACK_TYPE": "degen_100",
+        "JUPITER_GIFT_COUNT": "1",
+        "JUPITER_GACHA_OPEN_URL": "https://jup.ag/gacha"
+      }
+    },
+    "mainnet-dev": {
+      "name": "gachapon-api-mainnet-dev",
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "gachapon-mainnet-dev",
+          "database_id": "REPLACE_WITH_MAINNET_DEV_D1_ID"
+        }
+      ],
+      "triggers": { "crons": ["*/5 * * * *"] },
+      "vars": {
+        "ENVIRONMENT": "preview",
+        "AUTH_MODE": "privy",
+        "PAYMENTS_MODE": "solana-rpc",
+        "ALLOWED_ORIGINS": "https://gachapon-web-mainnet-dev.gachapon-dev.workers.dev,https://gotchapon.fun,https://www.gotchapon.fun",
+        "ENABLED_ASSETS": "USDC",
+        "TREASURY_USDC_TOKEN_ACCOUNT": "5J5wfNFJREQ43C9LBeb6qHJm3uN1aKWhb9351BhRgEpt",
+        "USDC_MINT": "5NPTRsDiMDtGGBgU2xrCMR5nHoKKMkmT5oM19MPUt547",
+        "FAUCET_ENABLED": "true",
+        "FAUCET_GRANT_BASE": "100000000",
+        "GEO_BLOCK": "off",
+        "FEE_PAYER_ADDRESS": "7i6jN4W6Xb2yqqU6Ei9fsgMAGW2x37zmZGfzPvJSEGc4",
+        "PRIVY_APP_ID": "cmtvc9otj02hd0bl8frhel0zh",
+        "JUPITER_GIFT_ENABLED": "false",
+        "TCGAPI_BASE_URL": "https://tcgapi.jup.ag",
+        "JUPITER_GIFT_PACK_TYPE": "degen_100",
+        "JUPITER_GIFT_COUNT": "1",
+        "JUPITER_GACHA_OPEN_URL": "https://jup.ag/gacha"
+      }
+    },
+    "production": {
+      "name": "gachapon-api-production",
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "gachapon-production",
+          "database_id": "REPLACE_WITH_PRODUCTION_D1_ID"
+        }
+      ],
+      "triggers": { "crons": ["*/5 * * * *"] },
+      "vars": {
+        "ENVIRONMENT": "production",
+        "AUTH_MODE": "privy",
+        "PAYMENTS_MODE": "solana-rpc",
+        "ALLOWED_ORIGINS": "REPLACE_WITH_WEB_ORIGIN",
+        "ENABLED_ASSETS": "USDC,USDT",
+        "TREASURY_USDC_TOKEN_ACCOUNT": "REPLACE_WITH_USDC_TOKEN_ACCOUNT",
+        "TREASURY_USDT_TOKEN_ACCOUNT": "REPLACE_WITH_USDT_TOKEN_ACCOUNT",
+        "USDC_MINT": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "USDT_MINT": "Es9vMFrzaCERmJfrF4H2FYDjdhyb5tZic7EZ8ns1vR8",
+        "PRIVY_APP_ID": "REPLACE_WITH_PRIVY_APP_ID",
+        "FEE_PAYER_ADDRESS": "REPLACE_WITH_FEE_PAYER_ADDRESS",
+        "JUPITER_GIFT_ENABLED": "false",
+        "TCGAPI_BASE_URL": "https://tcgapi.jup.ag",
+        "JUPITER_GIFT_PACK_TYPE": "degen_100",
+        "JUPITER_GIFT_COUNT": "1",
+        "JUPITER_GACHA_OPEN_URL": "https://jup.ag/gacha"
+      }
+    }
+  }
+}

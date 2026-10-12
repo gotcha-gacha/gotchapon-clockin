@@ -1,0 +1,14 @@
+{
+  "cluster": "mainnet-beta",
+  "rpcUrl": "https://api.mainnet-beta.solana.com",
+  "operatorKeypair": "../../operator.json",
+  "feePayerAddress": "7i6jN4W6Xb2yqqU6Ei9fsgMAGW2x37zmZGfzPvJSEGc4",
+  "feePayerFundingSol": "0.5",
+  "testToken": {
+    "seed": "gachapon-test-usdc-v1",
+    "decimals": 6,
+    "initialSupply": "1000",
+    "treasuryOwner": "9d4LUccwNb1JehNAW4rgy4CzBpxNv32KZ2YZcMTywEV6",
+    "faucetTargetBalance": "20000"
+  }
+}

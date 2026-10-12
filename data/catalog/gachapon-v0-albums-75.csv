@@ -1,0 +1,76 @@
+album_id,album_title,slot,card_id,name,set,types,img,img_hires
+A,Little Lanterns,1,sv3-76,Tadbulb,SV3 76,Lightning,https://images.pokemontcg.io/sv3/76.png,https://images.pokemontcg.io/sv3/76_hires.png
+A,Little Lanterns,2,sv10-72,Team Rocket's Mareep,SV10 72,Lightning,https://images.pokemontcg.io/sv10/72.png,https://images.pokemontcg.io/sv10/72_hires.png
+A,Little Lanterns,3,sv4-62,Blitzle,SV4 62,Lightning,https://images.pokemontcg.io/sv4/62.png,https://images.pokemontcg.io/sv4/62_hires.png
+A,Little Lanterns,4,sv7-70,Greavard,SV7 70,Psychic,https://images.pokemontcg.io/sv7/70.png,https://images.pokemontcg.io/sv7/70_hires.png
+A,Little Lanterns,5,sv1-74,Pawmi,SV1 74,Lightning,https://images.pokemontcg.io/sv1/74.png,https://images.pokemontcg.io/sv1/74_hires.png
+A,Little Lanterns,6,sv1-89,Drifloon,SV1 89,Psychic,https://images.pokemontcg.io/sv1/89.png,https://images.pokemontcg.io/sv1/89_hires.png
+A,Little Lanterns,7,sv6-66,Shinx,SV6 66,Lightning,https://images.pokemontcg.io/sv6/66.png,https://images.pokemontcg.io/sv6/66_hires.png
+A,Little Lanterns,8,sv1-100,Flittle,SV1 100,Psychic,https://images.pokemontcg.io/sv1/100.png,https://images.pokemontcg.io/sv1/100_hires.png
+A,Little Lanterns,9,sv4-19,Magby,SV4 19,Fire,https://images.pokemontcg.io/sv4/19.png,https://images.pokemontcg.io/sv4/19_hires.png
+A,Little Lanterns,10,sv7-19,Ponyta,SV7 19,Fire,https://images.pokemontcg.io/sv7/19.png,https://images.pokemontcg.io/sv7/19_hires.png
+A,Little Lanterns,11,sv1-78,Wattrel,SV1 78,Lightning,https://images.pokemontcg.io/sv1/78.png,https://images.pokemontcg.io/sv1/78_hires.png
+A,Little Lanterns,12,sv5-73,Elgyem,SV5 73,Psychic,https://images.pokemontcg.io/sv5/73.png,https://images.pokemontcg.io/sv5/73_hires.png
+A,Little Lanterns,13,sv1-70,Rotom,SV1 70,Lightning,https://images.pokemontcg.io/sv1/70.png,https://images.pokemontcg.io/sv1/70_hires.png
+A,Little Lanterns,14,sv1-97,Fidough,SV1 97,Psychic,https://images.pokemontcg.io/sv1/97.png,https://images.pokemontcg.io/sv1/97_hires.png
+A,Little Lanterns,15,sv4-83,Tinkatink,SV4 83,Psychic,https://images.pokemontcg.io/sv4/83.png,https://images.pokemontcg.io/sv4/83_hires.png
+A,Little Lanterns,16,sv4-77,Pumpkaboo,SV4 77,Psychic,https://images.pokemontcg.io/sv4/77.png,https://images.pokemontcg.io/sv4/77_hires.png
+A,Little Lanterns,17,sv1-87,Shuppet,SV1 87,Psychic,https://images.pokemontcg.io/sv1/87.png,https://images.pokemontcg.io/sv1/87_hires.png
+A,Little Lanterns,18,sv2-83,Jigglypuff,SV2 83,Psychic,https://images.pokemontcg.io/sv2/83.png,https://images.pokemontcg.io/sv2/83_hires.png
+A,Little Lanterns,19,sv1-82,Drowzee,SV1 82,Psychic,https://images.pokemontcg.io/sv1/82.png,https://images.pokemontcg.io/sv1/82_hires.png
+A,Little Lanterns,20,sv6-83,Girafarig,SV6 83,Psychic,https://images.pokemontcg.io/sv6/83.png,https://images.pokemontcg.io/sv6/83_hires.png
+A,Little Lanterns,21,sv10-32,Ethan's Cyndaquil,SV10 32,Fire,https://images.pokemontcg.io/sv10/32.png,https://images.pokemontcg.io/sv10/32_hires.png
+A,Little Lanterns,22,sv7-62,Yamask,SV7 62,Psychic,https://images.pokemontcg.io/sv7/62.png,https://images.pokemontcg.io/sv7/62_hires.png
+A,Little Lanterns,23,sv9-58,Mr. Mime,SV9 58,Psychic,https://images.pokemontcg.io/sv9/58.png,https://images.pokemontcg.io/sv9/58_hires.png
+A,Little Lanterns,24,sv6-89,Swirlix,SV6 89,Psychic,https://images.pokemontcg.io/sv6/89.png,https://images.pokemontcg.io/sv6/89_hires.png
+A,Little Lanterns,25,sv8-81,Sigilyph,SV8 81,Psychic,https://images.pokemontcg.io/sv8/81.png,https://images.pokemontcg.io/sv8/81_hires.png
+B,Tidepool Friends,1,sv10-9,Mow Rotom,SV10 9,Grass,https://images.pokemontcg.io/sv10/9.png,https://images.pokemontcg.io/sv10/9_hires.png
+B,Tidepool Friends,2,sv10-5,Shroomish,SV10 5,Grass,https://images.pokemontcg.io/sv10/5.png,https://images.pokemontcg.io/sv10/5_hires.png
+B,Tidepool Friends,3,sv5-20,Bramblin,SV5 20,Grass,https://images.pokemontcg.io/sv5/20.png,https://images.pokemontcg.io/sv5/20_hires.png
+B,Tidepool Friends,4,sv5-8,Roselia,SV5 8,Grass,https://images.pokemontcg.io/sv5/8.png,https://images.pokemontcg.io/sv5/8_hires.png
+B,Tidepool Friends,5,sv5-16,Deerling,SV5 16,Grass,https://images.pokemontcg.io/sv5/16.png,https://images.pokemontcg.io/sv5/16_hires.png
+B,Tidepool Friends,6,sv5-18,Grubbin,SV5 18,Grass,https://images.pokemontcg.io/sv5/18.png,https://images.pokemontcg.io/sv5/18_hires.png
+B,Tidepool Friends,7,sv3-9,Foongus,SV3 9,Grass,https://images.pokemontcg.io/sv3/9.png,https://images.pokemontcg.io/sv3/9_hires.png
+B,Tidepool Friends,8,sv1-51,Bruxish,SV1 51,Water,https://images.pokemontcg.io/sv1/51.png,https://images.pokemontcg.io/sv1/51_hires.png
+B,Tidepool Friends,9,sv10-19,Team Rocket's Tarountula,SV10 19,Grass,https://images.pokemontcg.io/sv10/19.png,https://images.pokemontcg.io/sv10/19_hires.png
+B,Tidepool Friends,10,sv1-59,Cetoddle,SV1 59,Water,https://images.pokemontcg.io/sv1/59.png,https://images.pokemontcg.io/sv1/59_hires.png
+B,Tidepool Friends,11,sv3-48,Buizel,SV3 48,Water,https://images.pokemontcg.io/sv3/48.png,https://images.pokemontcg.io/sv3/48_hires.png
+B,Tidepool Friends,12,sv2-47,Luvdisc,SV2 47,Water,https://images.pokemontcg.io/sv2/47.png,https://images.pokemontcg.io/sv2/47_hires.png
+B,Tidepool Friends,13,sv9-19,Nymble,SV9 19,Grass,https://images.pokemontcg.io/sv9/19.png,https://images.pokemontcg.io/sv9/19_hires.png
+B,Tidepool Friends,14,sv10-50,Misty's Lapras,SV10 50,Water,https://images.pokemontcg.io/sv10/50.png,https://images.pokemontcg.io/sv10/50_hires.png
+B,Tidepool Friends,15,sv6-3,Pinsir,SV6 3,Grass,https://images.pokemontcg.io/sv6/3.png,https://images.pokemontcg.io/sv6/3_hires.png
+B,Tidepool Friends,16,sv1-11,Skiddo,SV1 11,Grass,https://images.pokemontcg.io/sv1/11.png,https://images.pokemontcg.io/sv1/11_hires.png
+B,Tidepool Friends,17,sv2-8,Combee,SV2 8,Grass,https://images.pokemontcg.io/sv2/8.png,https://images.pokemontcg.io/sv2/8_hires.png
+B,Tidepool Friends,18,sv6-9,Volbeat,SV6 9,Grass,https://images.pokemontcg.io/sv6/9.png,https://images.pokemontcg.io/sv6/9_hires.png
+B,Tidepool Friends,19,sv3-58,Wiglett,SV3 58,Water,https://images.pokemontcg.io/sv3/58.png,https://images.pokemontcg.io/sv3/58_hires.png
+B,Tidepool Friends,20,sv10-21,Smoliv,SV10 21,Grass,https://images.pokemontcg.io/sv10/21.png,https://images.pokemontcg.io/sv10/21_hires.png
+B,Tidepool Friends,21,sv6-17,Applin,SV6 17,Grass,https://images.pokemontcg.io/sv6/17.png,https://images.pokemontcg.io/sv6/17_hires.png
+B,Tidepool Friends,22,sv1-13,Sprigatito,SV1 13,Grass,https://images.pokemontcg.io/sv1/13.png,https://images.pokemontcg.io/sv1/13_hires.png
+B,Tidepool Friends,23,sv8-43,Spheal,SV8 43,Water,https://images.pokemontcg.io/sv8/43.png,https://images.pokemontcg.io/sv8/43_hires.png
+B,Tidepool Friends,24,sv3-5,Shuckle,SV3 5,Grass,https://images.pokemontcg.io/sv3/5.png,https://images.pokemontcg.io/sv3/5_hires.png
+B,Tidepool Friends,25,sv8-2,Exeggcute,SV8 2,Grass,https://images.pokemontcg.io/sv8/2.png,https://images.pokemontcg.io/sv8/2_hires.png
+C,Wanderers,1,sv7-88,Falinks,SV7 88,Fighting,https://images.pokemontcg.io/sv7/88.png,https://images.pokemontcg.io/sv7/88_hires.png
+C,Wanderers,2,sv2-114,Croagunk,SV2 114,Fighting,https://images.pokemontcg.io/sv2/114.png,https://images.pokemontcg.io/sv2/114_hires.png
+C,Wanderers,3,sv5-136,Minccino,SV5 136,Colorless,https://images.pokemontcg.io/sv5/136.png,https://images.pokemontcg.io/sv5/136_hires.png
+C,Wanderers,4,sv10-132,Marnie's Scraggy,SV10 132,Darkness,https://images.pokemontcg.io/sv10/132.png,https://images.pokemontcg.io/sv10/132_hires.png
+C,Wanderers,5,sv5-93,Rolycoly,SV5 93,Fighting,https://images.pokemontcg.io/sv5/93.png,https://images.pokemontcg.io/sv5/93_hires.png
+C,Wanderers,6,sv10-97,Nosepass,SV10 97,Fighting,https://images.pokemontcg.io/sv10/97.png,https://images.pokemontcg.io/sv10/97_hires.png
+C,Wanderers,7,sv5-14,Cottonee,SV5 14,Grass,https://images.pokemontcg.io/sv5/14.png,https://images.pokemontcg.io/sv5/14_hires.png
+C,Wanderers,8,sv5-127,Noctowl,SV5 127,Colorless,https://images.pokemontcg.io/sv5/127.png,https://images.pokemontcg.io/sv5/127_hires.png
+C,Wanderers,9,sv4-10,Blipbug,SV4 10,Grass,https://images.pokemontcg.io/sv4/10.png,https://images.pokemontcg.io/sv4/10_hires.png
+C,Wanderers,10,sv1-151,Skwovet,SV1 151,Colorless,https://images.pokemontcg.io/sv1/151.png,https://images.pokemontcg.io/sv1/151_hires.png
+C,Wanderers,11,sv9-14,Durant,SV9 14,Grass,https://images.pokemontcg.io/sv9/14.png,https://images.pokemontcg.io/sv9/14_hires.png
+C,Wanderers,12,sv3-26,Charmander,SV3 26,Fire,https://images.pokemontcg.io/sv3/26.png,https://images.pokemontcg.io/sv3/26_hires.png
+C,Wanderers,13,sv5-94,Carkol,SV5 94,Fighting,https://images.pokemontcg.io/sv5/94.png,https://images.pokemontcg.io/sv5/94_hires.png
+C,Wanderers,14,sv2-133,Sneasel,SV2 133,Darkness,https://images.pokemontcg.io/sv2/133.png,https://images.pokemontcg.io/sv2/133_hires.png
+C,Wanderers,15,sv4-47,Wimpod,SV4 47,Water,https://images.pokemontcg.io/sv4/47.png,https://images.pokemontcg.io/sv4/47_hires.png
+C,Wanderers,16,sv3-171,Herdier,SV3 171,Colorless,https://images.pokemontcg.io/sv3/171.png,https://images.pokemontcg.io/sv3/171_hires.png
+C,Wanderers,17,sv10-99,Meditite,SV10 99,Fighting,https://images.pokemontcg.io/sv10/99.png,https://images.pokemontcg.io/sv10/99_hires.png
+C,Wanderers,18,sv2-1,Hoppip,SV2 1,Grass,https://images.pokemontcg.io/sv2/1.png,https://images.pokemontcg.io/sv2/1_hires.png
+C,Wanderers,19,sv9-104,N's Klang,SV9 104,Metal,https://images.pokemontcg.io/sv9/104.png,https://images.pokemontcg.io/sv9/104_hires.png
+C,Wanderers,20,sv8-122,Alolan Diglett,SV8 122,Metal,https://images.pokemontcg.io/sv8/122.png,https://images.pokemontcg.io/sv8/122_hires.png
+C,Wanderers,21,sv8-156,Oranguru,SV8 156,Colorless,https://images.pokemontcg.io/sv8/156.png,https://images.pokemontcg.io/sv8/156_hires.png
+C,Wanderers,22,sv4-115,Liepard,SV4 115,Darkness,https://images.pokemontcg.io/sv4/115.png,https://images.pokemontcg.io/sv4/115_hires.png
+C,Wanderers,23,sv10-143,Steven's Beldum,SV10 143,Metal,https://images.pokemontcg.io/sv10/143.png,https://images.pokemontcg.io/sv10/143_hires.png
+C,Wanderers,24,sv3-55,Cryogonal,SV3 55,Water,https://images.pokemontcg.io/sv3/55.png,https://images.pokemontcg.io/sv3/55_hires.png
+C,Wanderers,25,sv6-37,Lampent,SV6 37,Fire,https://images.pokemontcg.io/sv6/37.png,https://images.pokemontcg.io/sv6/37_hires.png

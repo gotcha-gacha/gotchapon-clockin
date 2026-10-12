@@ -1,0 +1,59 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# dependencies
+node_modules
+
+# Expo
+.expo/
+dist/
+# CanvasKit for the web, copied out of node_modules by `pnpm skia:web` (8 MB; never committed)
+public/canvaskit.wasm
+expo-env.d.ts
+
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
+.DS_Store
+*.pem
+
+# typescript
+*.tsbuildinfo
+
+# generated native folders
+/ios
+/android
+
+# secrets — values live in .env.local / EAS secrets, never in git
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# card image fixtures fetched by data/download_cards.sh
+data/cards/
+
+# Cloudflare Workers local state and generated types
+.wrangler/
+server/.wrangler/
+server/worker-configuration.d.ts
+server/.generated/
+
+# Local Solana signing authorities — never commit
+/operator.json
+/fee-payer.json
+/vault.json

@@ -1,0 +1,15 @@
+diff --git a/build/fork/createMemoryHistory.js b/build/fork/createMemoryHistory.js
+index c26fcb91f4c3f81909a47077b60d646d7b4a3a0b..e04afbd3f2b93fc3ac4a5487cb2f7308021f1a87 100644
+--- a/build/fork/createMemoryHistory.js
++++ b/build/fork/createMemoryHistory.js
+@@ -169,6 +169,10 @@ function createMemoryHistory() {
+         // Here we normalize it so that only external changes (e.g. user pressing back/forward) trigger the listener
+         listen(listener) {
+             const onPopState = () => {
++                // gachapon patch (PR #165): sync the index to where the browser is, as React Navigation's own copy of this file
++                // does (react-navigation/native/createMemoryHistory.js). Without it a user's Back / Forward leaves `index` behind,
++                // the next replace() writes the wrong record, and a later Back rebuilds the whole app from the URL.
++                index = this.index;
+                 if (pending.length) {
+                     // This was triggered by `history.go(n)`, we shouldn't call the listener
+                     return;
