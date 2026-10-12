@@ -14,7 +14,8 @@ never talks about the chain; underneath, every pull is a real Solana payment.
 
 Entered in **CLOCK IN**, the Solana Mobile hackathon (with RadiantsDAO).
 
-**APK:** [Releases](https://github.com/gotcha-gacha/gotchapon-clockin/releases/latest) · The demo video and pitch deck are linked in the CLOCK IN submission.
+**APK:** [Releases](https://github.com/gotcha-gacha/gotchapon-clockin/releases/latest) · **In a browser:** [gotchapon.fun](https://gotchapon.fun) · The demo
+video and pitch deck are linked in the CLOCK IN submission.
 
 ---
 
@@ -22,7 +23,8 @@ Entered in **CLOCK IN**, the Solana Mobile hackathon (with RadiantsDAO).
 
 The APK talks to **mainnet-dev**, our staging stack: Solana mainnet, real Privy sign-in, real transactions and real draws,
 but **payments use a test USDC mint with no cash value** (`6yCC9D83GvZg8s2rT5ftXPiSCWgf7qmKfD1HZqXM29HT`), not Circle's
-USDC. For judging, this stack is open in every country.
+USDC. For judging, this stack is open in every country. [gotchapon.fun](https://gotchapon.fun) runs the same app on the same
+stack in a browser (sign in with Apple, Google or email); the steps below are for the phone.
 
 1. **Install** the APK from [Releases](https://github.com/gotcha-gacha/gotchapon-clockin/releases/latest) on a Seeker or any
    Android phone (allow installs from your browser or file manager).
@@ -154,8 +156,7 @@ secrets.
 
 ## Team and notices
 
-Built by [@benlvb](https://github.com/benlvb) (app, web) and [@Arrowana](https://github.com/Arrowana) (Worker, D1 ledger,
-Solana). Gotchapon is a working name.
+Built by [@benlvb](https://github.com/benlvb). Gotchapon is a working name.
 
 This snapshot is one commit of a private repository built in September and October 2026; the full development history is
 available to the judges on request.
